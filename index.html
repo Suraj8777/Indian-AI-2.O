@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Jarvis AI Assistant</title>
+    <title>SM AI Assistant</title>
     <style>
         body {
             margin: 0;
@@ -52,8 +52,8 @@
     </style>
 </head>
 <body>
-    <div class="jarvis-container">
-        <div class="output" id="output">JARVIS: Systems online. How may I assist you, sir?</div>
+    <div class="SM-container">
+        <div class="output" id="output">SM: Systems online. How may I assist you, sir?</div>
         <button onclick="startListening()">Speak to JARVIS</button>
     </div>
 
@@ -66,7 +66,7 @@
         // Predefined responses
         const predefinedResponses = {
             'time': () => `The current time is ${new Date().toLocaleTimeString()}`,
-            'who are you': () => 'I am JARVIS, your personal AI assistant, inspired by Mr. Stark\'s creation.'
+            'who are you': () => 'I am SM, your personal AI assistant, inspired by Mr. Stark\'s creation.'
         };
 
         recognition.onresult = async function(event) {
@@ -117,15 +117,15 @@
             }
             
             // Remove the "Processing" message if it was added
-            output.innerHTML = output.innerHTML.replace('<br>JARVIS: Processing your request, sir...', '');
+            output.innerHTML = output.innerHTML.replace('<br>SM: Processing your request, sir...', '');
             
-            output.innerHTML += `<br>JARVIS: ${response}`;
+            output.innerHTML += `<br>SM: ${response}`;
             output.scrollTop = output.scrollHeight;
             speak(response);
         };
 
         recognition.onerror = function(event) {
-            output.innerHTML += '<br>JARVIS: Apologies, sir. I encountered an error.';
+            output.innerHTML += '<br>SM: Apologies, sir. I encountered an error.';
         };
 
         function startListening() {
